@@ -19,10 +19,3 @@ collection_groups:
   - heading: Data
     collections:
       - data
-
-_inputs:
-  content_blocks:
-    type: array
-    options:
-      structures: _structures.content_blocks
-      empty_type: array
