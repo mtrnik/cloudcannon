@@ -1,0 +1,45 @@
+---
+const frfalri = Astro.props
+---
+    
+<!-- PRICING TABLE COMPONENT-->
+<div class="pricing-frfalri-v1_0_0">
+<section class="pricing" id="pricing">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>{frfalri.title}</h2>
+                <p>{frfalri.text}</p>
+            </div>
+        </div>
+        <div class="row">
+            {frfalri.cards.map((item) => (
+            <div class="col-md-4">
+                <div class={item.class}>
+                    {item.badge &&
+                    <div class="pricing-card__badge">{item.badge}</div>
+                    }
+                    <h3 class="card__title">{item.title}</h3>
+                    <div class="pricing-card__price">
+                        <span class="pricing-card__amount">{item.amount}</span>
+                        <span class="pricing-card__period">{item.period}</span>
+                    </div>
+                    <p>{item.text}</p>
+                    <ul class="pricing-card__features">
+                        {item.features.map((item) => (
+                        <li>{item}</li>
+                        ))}
+                    </ul>
+                    <a href={item.button.href} class={item.button.class}>{item.button.label}</a>
+                </div>
+            </div>
+            ))}
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <a href={frfalri.button.href} class="button button--secondary-ghost">{frfalri.button.label}</a>
+            </div>
+        </div>
+    </div>
+</section>
+</div>

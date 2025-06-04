@@ -1,0 +1,44 @@
+---
+const frfalyw = Astro.props
+---
+    
+<!-- FOOTER COMPONENT-->
+<div class="footer-frfalyw-v1_0_0">
+<footer class="footer" aria-labelledby="footer-heading">
+    <div class="container">
+        <h2 id="footer-heading" class="sr-only">Site Navigation and Information</h2>
+        <div class="row">
+            {frfalyw.columns.map((item) => (
+            <div class="col-md-3">
+                <nav aria-label={item.title}>
+                    <h3 class="footer__column-title">{item.title}</h3>
+                    <ul class="footer__list">
+                        {item.items.map((item) => (
+                        <li class="footer__item">
+                            <a href={item.href} class="footer__link">
+                                <span>{item.label}</span>
+                            </a>
+                        </li>
+                        ))}
+                    </ul>
+                </nav>
+                {item.socials?.[0] &&
+                 <nav aria-label="Social media links">
+                    <h3 class="sr-only">Social Media</h3>
+                    <ul class="footer__social">
+                        {item.socials.map((item) => (
+                        <li>
+                            <a href={item.href} class="footer__social-link" aria-label={item.label} target="_blank" rel="noopener noreferrer">
+                                <img src="https://placehold.co/24x24" alt="icon">
+                            </a>
+                        </li>
+                        ))}
+                    </ul>
+                </nav>
+                }
+            </div>
+            ))}
+        </div>
+    </div>
+</footer>
+</div>
