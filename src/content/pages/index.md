@@ -3,7 +3,7 @@ _schema: default
 title: CloudCannon Astro Starter
 content_blocks:
   - _bookshop_name: header
-    title: Okto.Digital is the best company
+    title: This is Okto.Digital
     items:
       - href: /features
         label: Features
@@ -18,4 +18,6 @@ content_blocks:
     button:
       href: /login
       label: Log In
+seo:
+  no_index: false
 ---
