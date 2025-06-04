@@ -47,7 +47,7 @@ hero_block:
       background_color: '#034ad8'
 content_blocks:
   - _bookshop_name: header
-    title: Okto.Digital 2323
+    title: Okto.Digital
     items:
       - href: /features
         label: Features
