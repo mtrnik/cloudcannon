@@ -46,6 +46,22 @@ hero_block:
       button_aria_label:
       background_color: '#034ad8'
 content_blocks:
+  - _bookshop_name: header
+    title: 'Okto.Digital '
+    items:
+      - href: /features
+        label: Features
+      - href: /pricing
+        label: Pricing
+      - href: /blog
+        label: Blog
+      - href: /about
+        label: About
+      - href: /contact
+        label: Contact
+    button:
+      href: /login
+      label: Log In
   - _bookshop_name: left-right
     background_color: '#ffffff'
     heading:

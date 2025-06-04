@@ -1,0 +1,30 @@
+---
+const frfahov = Astro.props
+---
+
+<!-- HEADER COMPONENT-->
+<div class="header-frfahov-v1_0_0">
+<header class="site-header">
+    <div class="container">
+        <div class="header-wrapper">
+            <a href="/" class="logo" aria-label={frfahov.title}>
+                <span>{frfahov.title}</span>
+            </a>
+
+            <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">
+                <span class="hamburger" aria-hidden="true"></span>
+                <span class="sr-only">Menu</span>
+            </button>
+
+            <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    {frfahov.items.map((item) => (
+                    <li><a href={item.href} class="nav-link">{item.label}</a></li>
+					))}
+                    <li class="login-item"><a href={frfahov.button.href} class="button button--primary">{frfahov.button.label}</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+</div>
