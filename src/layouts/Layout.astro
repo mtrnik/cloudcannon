@@ -1,25 +1,27 @@
 ---
-export interface Props {
-  title: string;
-  content_blocks?: any;
-}
+import site from "../data/site.json";
 
+const title = Astro.props.title
+    ? `${Astro.props.title} | ${site.site_title}`
+    : site.site_title;
+
+const slug = Astro.params.slug ? Astro.params.slug + '/' : ''
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1"
-    />
-    <meta name="generator" content={Astro.generator} />
-
-  </head>
-  <body>
-    <main>
-      <slot />
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+  <link href=`/styles/${slug}style.css` rel="stylesheet" />
+</head>
+<body>
+<main>
+  <slot />
+</main>
+<script src=`/js/${slug}script.js` is:inline />
+<script src="//unpkg.com/alpinejs" defer is:inline />
+</body>
 </html>
