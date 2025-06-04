@@ -2,8 +2,6 @@
 import path from "node:path";
 import "../styles/main.scss";
 import site from "../../data/site.json";
-import Header from "../components/navigation/header.astro";
-import Footer from "../components/navigation/footer.astro";
 import { SEO } from "astro-seo";
 
 export interface SEOProps {
@@ -46,7 +44,6 @@ const image = seo?.featured_image ?? site.image; // Image should be a static ima
 const imagePath = path.join(baseUrl, image);
 const imageAlt = seo?.featured_image_alt ?? site.image_alt;
 const canonicalURL = new URL(seo?.canonical_url ?? Astro.url.pathname, baseUrl);
-const headerStyleOverrides = hero_block?.header_style_overrides ?? {};
 ---
 
 <!doctype html>
@@ -117,11 +114,9 @@ const headerStyleOverrides = hero_block?.header_style_overrides ?? {};
     />
   </head>
   <body>
-    <Header headerStyleOverrides={headerStyleOverrides} />
     <main>
       <slot />
     </main>
-    <Footer />
     <style is:global>
       :root {
         /* Max width and inline padding of the page */
